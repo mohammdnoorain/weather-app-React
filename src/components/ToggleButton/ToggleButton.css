@@ -1,0 +1,59 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.toggle-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Increased width for more visibility */
+  height: 30px; /* Increased height for a larger toggle */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px; /* Rounded corners */
+  transition: background-color 0.4s; /* Smooth background transition */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; /* Adjust height for better fit */
+  width: 26px; /* Width of the toggle */
+  left: 2px; /* Initial position */
+  bottom: 2px; /* Initial position */
+  background-color: white;
+  border-radius: 50%; /* Circular toggle */
+  transition: transform 0.4s; /* Smooth position transition */
+}
+
+input:checked + .slider {
+  background-color: #2196f3; /* Color when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px); /* Move the toggle to the right */
+}
+
