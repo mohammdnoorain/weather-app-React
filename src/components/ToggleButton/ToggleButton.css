@@ -1,22 +1,17 @@
+
+
 .toggle-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   margin: 20px;
-}
-
-.toggle-label {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px; /* Increased width for more visibility */
-  height: 30px; /* Increased height for a larger toggle */
+  width: 60px; 
+  height: 30px; 
 }
 
 .switch input {
@@ -33,27 +28,56 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  border-radius: 30px; /* Rounded corners */
-  transition: background-color 0.4s; /* Smooth background transition */
+  border-radius: 30px; 
+  transition: background-color 0.4s;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px; /* Adjust height for better fit */
-  width: 26px; /* Width of the toggle */
-  left: 2px; /* Initial position */
-  bottom: 2px; /* Initial position */
+  height: 26px; 
+  width: 26px;
+  left: 2px; 
+  bottom: 2px;
   background-color: white;
-  border-radius: 50%; /* Circular toggle */
-  transition: transform 0.4s; /* Smooth position transition */
+  border-radius: 50%; 
+  transition: transform 0.4s; 
 }
 
 input:checked + .slider {
-  background-color: #2196f3; /* Color when checked */
+  background-color: #2196f3; 
 }
 
 input:checked + .slider:before {
-  transform: translateX(30px); /* Move the toggle to the right */
+  transform: translateX(30px); 
+}
+
+.label-celsius,
+.label-fahrenheit {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 30px; 
+  font-size: 14px; 
+  color: black; 
+  font-weight: bold; 
+}
+
+.label-celsius {
+  left: 5px;
+  opacity: 1; 
+}
+
+.label-fahrenheit {
+  right: 5px; 
+  opacity: 0; 
+}
+
+input:checked + .slider .label-celsius {
+  opacity: 0; 
+}
+
+input:checked + .slider .label-fahrenheit {
+  opacity: 1; 
 }
 
