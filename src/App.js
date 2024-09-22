@@ -78,8 +78,10 @@ function App() {
   return (
     <div className="container">
       <PullToRefresh onRefresh={handleOnSearchChange} city={lastSearch} />
-      <ToggleButton onToggle={handleUnitToggle} />
-      <Search onSearchChange={handleOnSearchChange} lastSearch={lastSearch} />
+      <div className="main-header">
+        <Search onSearchChange={handleOnSearchChange} lastSearch={lastSearch} />
+        <ToggleButton onToggle={handleUnitToggle} />
+      </div>
       {currentWeather && <CurrentWeather data={currentWeather} unit={unit} />}
       {forecast && <Forecast data={forecast} unit={unit} />}
     </div>
@@ -87,7 +89,7 @@ function App() {
 }
 
 export default App;
-//
+
 
 
 

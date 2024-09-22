@@ -5,7 +5,16 @@
   padding: 0 15px; 
 }
 
-/* For smaller screens */
+.main-header {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;  
+  width: 100%;  
+  padding: 10px;  
+}
+
+
+
 @media (max-width: 768px) {
   .container {
     max-width: 90%; 
